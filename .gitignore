@@ -1,4 +1,6 @@
-notebooks
-scripts
-secrets
+notebooks/
+scripts/
+secrets/
+models/
 .env
+**/.rasa/
