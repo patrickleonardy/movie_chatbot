@@ -1,0 +1,79 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: movie_information
+  examples: |
+    - What can you tell me about [Interstellar](movie)
+    - What happens in [Shrek3](movie)
+    - Can you provide a brief summary of the plot of [The Shawshank Redemption](movie)
+    - Who directed the movie [Inception](movie)
+    - What is the genre of [Jurassic Park](movie)
+    - Tell me about the main characters in [The Lord of the Rings: The Fellowship of the Ring](movie)
+    - What awards did [The Godfather](movie) win?
+    - Describe the setting and time period in [Forrest Gump](movie)
+    - What is the significance of the title in [The Silence of the Lambs](movie)
+    - Can you provide some memorable quotes from [Pulp Fiction](movie)
+    - Explain the special effects used in [Avatar](movie)
+    - Give me a brief overview of the historical context of [Saving Private Ryan](movie)
+
+- intent: movie_recommendation
+  examples: |
+    - Can you recommend me a movie?
+    - What is a good movie to watch?
+    - Which movie should I watch to day?
+    - What should I watch?

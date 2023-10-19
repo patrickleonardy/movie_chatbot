@@ -1,0 +1,42 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - movie_information
+  - movie_recommendation
+
+actions:
+  - action_welcome_message
+
+entities:
+  - movie
+
+slots:
+  movie:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: movie
+
+
+responses:
+  utter_greet:
+  - text: "Hello! I'm MovieMentor. Ask me something about movies or ask me to recommend something to you."
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_information_about_movie:
+  - text: "I found this about {movie}"
+  - text: "Here is the information that I found about {movie}"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

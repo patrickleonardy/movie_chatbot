@@ -1,0 +1,21 @@
+version: "3.1"
+
+stories:
+- story: Welcome User
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: Find information about film 1
+  steps:
+    - intent: movie_information
+      entities:
+        - movie: Interstellar 
+    - action: utter_information_about_movie
+
+- story: Find information about film 2
+  steps:
+    - intent: movie_information
+      entities:
+        - movie: Shrek3 
+    - action: utter_information_about_movie
