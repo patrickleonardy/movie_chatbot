@@ -5,8 +5,6 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 
-This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -20,16 +18,27 @@ from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType
 from rasa_sdk import Action
 from rasa_sdk.events import SlotSet
 
-class ActionHelloWorld(Action):
+import omdb
+from dotenv import load_dotenv, find_dotenv
+import os
+import json
+_ = load_dotenv(find_dotenv())
+
+
+omdb.set_default('apikey', os.environ["OMDB_API_KEY"])
+
+
+class ActionSearchMovieOmdb(Action):
     def name(self) -> Text:
-        return "action_mario"
+        return "action_search_movie_omdb"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            # dispatcher.utter_message(text="Hello World!")
+        
+        current_movie = next(tracker.get_latest_entity_values("movie"), None)
 
-            link = "https://supermarioemulator.com/supermario.php"
-
-            dispatcher.utter_template("utter_game_mario", tracker, link=link)
-            return []
+        omdb_api_response = omdb.request(t=current_movie)
+        omdb_api_response_json_content = json.loads(omdb_api_response.content)
+        dispatcher.utter_message(json_message=omdb_api_response_json_content)
+        return []

@@ -10,7 +10,7 @@ intents:
   - movie_recommendation
 
 actions:
-  - action_welcome_message
+  - action_search_movie_omdb
 
 entities:
   - movie
@@ -36,6 +36,11 @@ responses:
   utter_information_about_movie:
   - text: "I found this about {movie}"
   - text: "Here is the information that I found about {movie}"
+
+  utter_nothing_found:
+  - text: "I am sorry, but I coudn't find anything related to {movie}"
+  - text: "I do not find anything related to {movie}"
+  - text: "I can't find {movie}"
 
 session_config:
   session_expiration_time: 60

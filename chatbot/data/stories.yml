@@ -11,11 +11,11 @@ stories:
     - intent: movie_information
       entities:
         - movie: Interstellar 
-    - action: utter_information_about_movie
+    - action: action_search_movie_omdb
 
 - story: Find information about film 2
   steps:
     - intent: movie_information
       entities:
         - movie: Shrek3 
-    - action: utter_information_about_movie
+    - action: action_search_movie_omdb
