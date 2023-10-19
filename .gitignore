@@ -4,3 +4,4 @@ secrets/
 models/
 .env
 **/.rasa/
+**/__pycache__/
